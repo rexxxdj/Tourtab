@@ -33,6 +33,7 @@
             this.passwordInputLabel = new System.Windows.Forms.Label();
             this.passwordInputBox = new System.Windows.Forms.TextBox();
             this.authFinishBtn = new System.Windows.Forms.Button();
+            this.iamAdmin = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // loginInputLabel
@@ -78,6 +79,7 @@
             // 
             // authFinishBtn
             // 
+            this.authFinishBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.authFinishBtn.Location = new System.Drawing.Point(80, 160);
             this.authFinishBtn.Name = "authFinishBtn";
             this.authFinishBtn.Size = new System.Drawing.Size(75, 23);
@@ -86,6 +88,17 @@
             this.authFinishBtn.UseVisualStyleBackColor = true;
             this.authFinishBtn.Click += new System.EventHandler(this.authFinishBtn_Click);
             // 
+            // iamAdmin
+            // 
+            this.iamAdmin.AutoSize = true;
+            this.iamAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.iamAdmin.Location = new System.Drawing.Point(15, 123);
+            this.iamAdmin.Name = "iamAdmin";
+            this.iamAdmin.Size = new System.Drawing.Size(130, 19);
+            this.iamAdmin.TabIndex = 5;
+            this.iamAdmin.Text = "Я администратор";
+            this.iamAdmin.UseVisualStyleBackColor = true;
+            // 
             // AuthForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -93,6 +106,7 @@
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(234, 201);
+            this.Controls.Add(this.iamAdmin);
             this.Controls.Add(this.authFinishBtn);
             this.Controls.Add(this.passwordInputBox);
             this.Controls.Add(this.passwordInputLabel);
@@ -114,6 +128,7 @@
         private System.Windows.Forms.Label passwordInputLabel;
         private System.Windows.Forms.TextBox passwordInputBox;
         private System.Windows.Forms.Button authFinishBtn;
+        private System.Windows.Forms.CheckBox iamAdmin;
     }
 }
 

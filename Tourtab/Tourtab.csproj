@@ -51,10 +51,64 @@
     <Compile Include="Forms\AuthForm.Designer.cs">
       <DependentUpon>AuthForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\EditForms\TournamentEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditForms\TournamentEdit.Designer.cs">
+      <DependentUpon>TournamentEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ListForms\SportList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ListForms\SportList.Designer.cs">
+      <DependentUpon>SportList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ListForms\UserList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ListForms\UserList.Designer.cs">
+      <DependentUpon>UserList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ListForms\ParticipantList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ListForms\ParticipantList.Designer.cs">
+      <DependentUpon>ParticipantList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ListForms\MatchList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ListForms\MatchList.Designer.cs">
+      <DependentUpon>MatchList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ListForms\TournamentList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ListForms\TournamentList.Designer.cs">
+      <DependentUpon>TournamentList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\AuthForm.resx">
       <DependentUpon>AuthForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EditForms\TournamentEdit.resx">
+      <DependentUpon>TournamentEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ListForms\SportList.resx">
+      <DependentUpon>SportList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ListForms\UserList.resx">
+      <DependentUpon>UserList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ListForms\ParticipantList.resx">
+      <DependentUpon>ParticipantList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ListForms\MatchList.resx">
+      <DependentUpon>MatchList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ListForms\TournamentList.resx">
+      <DependentUpon>TournamentList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -78,6 +132,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

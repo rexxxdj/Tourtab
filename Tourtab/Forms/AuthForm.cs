@@ -20,6 +20,13 @@ namespace Tourtab
         /*Кнопка "Войти"*/
         private void authFinishBtn_Click(object sender, EventArgs e)
         {
+            /*Поиск совпадний в базе данных. Если все(логин, пароль) найдено то
+            запускаем основную программу, иначе выводим сообщение об ошибке.*/
+
+            string userLogin   = loginInputBox.Text;    // Окно ввода логина
+            string userPasword = passwordInputBox.Text; // Окно ввода пароля
+            bool isAdmin       = iamAdmin.Checked;      // Админ?
+
 
         }
     }
