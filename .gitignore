@@ -1,4 +1,4 @@
 # gitignore
-!Tourtab/
-Tourtab/bin
-Tourtab/obj
+!/Tourtab/*
+/Tourtab/bin
+/Tourtab/obj
