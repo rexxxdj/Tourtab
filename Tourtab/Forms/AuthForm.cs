@@ -10,11 +10,17 @@ using System.Windows.Forms;
 
 namespace Tourtab
 {
-    public partial class Form1 : Form
+    public partial class AuthForm : Form
     {
-        public Form1()
+        public AuthForm()
         {
             InitializeComponent();
+        }
+
+        /*Кнопка "Войти"*/
+        private void authFinishBtn_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
