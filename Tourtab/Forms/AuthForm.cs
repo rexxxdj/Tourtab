@@ -2,19 +2,51 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Linq;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NLog;
 
 namespace Tourtab
 {
     public partial class AuthForm : Form
     {
+        /*Строка подключения*/
+        private const string connectionString = @"server=localhost;database=TourtabDb;Integrated Security=true";
+
+        private Tourtab.TourtabDb tourTabDb;
+
+
+        private Logger logger = LogManager.GetLogger("AuthForm");
+
         public AuthForm()
         {
             InitializeComponent();
+        }
+
+        /*Действие при загрузке формы*/
+        private void AuthForm_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                tourTabDb = new TourtabDb(connectionString);
+                if(tourTabDb != null)
+                {
+                    logger.Info("Соединение установлено");                  
+                }
+                else
+                {
+                    logger.Info("Соединение не установлено");
+                }
+            }
+            catch(Exception exc)
+            {
+                MessageBox.Show("Произошла ошибка\n" + exc.Message);
+                logger.Error("Error message: " + exc.Message);
+            }
         }
 
         /*Кнопка "Войти"*/
@@ -27,6 +59,21 @@ namespace Tourtab
             string userPasword = passwordInputBox.Text; // Окно ввода пароля
             bool isAdmin       = iamAdmin.Checked;      // Админ?
 
+            /*Получаем список организаторов*/
+            var orgs = tourTabDb.Organizators
+                .Where(x => x.Login == userLogin && x.Password == userPasword && x.Is_admin == isAdmin)
+                .Select(x => x);
+
+            /*Проверяем наличие в базе данных*/
+            if(orgs.Count() == 0)
+            {
+                /*Выводим сообщение об ошибке*/
+                MessageBox.Show("Не верно введены логин или пароль");
+            }
+            else
+            {
+                /*Запускаем основную программу*/
+            }
 
         }
     }

@@ -16,7 +16,7 @@ namespace Tourtab
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Forms.ListForms.TournamentList());
+            Application.Run(new AuthForm());
         }
     }
 }
