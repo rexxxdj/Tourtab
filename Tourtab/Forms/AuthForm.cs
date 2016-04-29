@@ -14,7 +14,6 @@ namespace Tourtab
 {
     public partial class AuthForm : Form
     {
-        /*Строка подключения*/
         
         /*Экземляр базы данных*/
         private Tourtab.TourtabDb tourTabDb;
@@ -73,6 +72,10 @@ namespace Tourtab
             {
                 /*Запускаем основную программу*/
                 logger.Info("Вход выполнен");
+
+                Forms.MainContainer mainContainer = new Forms.MainContainer();
+                mainContainer.Show();
+                this.Hide();
             }
 
         }

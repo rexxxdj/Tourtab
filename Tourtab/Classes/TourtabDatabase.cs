@@ -186,7 +186,7 @@ namespace Tourtab
 			OnCreated();
 		}
 		
-		[Column(Name="id", Storage="_Id", DbType="BigInt NOT NULL", IsPrimaryKey=true)]
+		[Column(Name="id", Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="BigInt NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public long Id
 		{
 			get
@@ -340,7 +340,7 @@ namespace Tourtab
 			OnCreated();
 		}
 		
-		[Column(Name="id", Storage="_Id", DbType="BigInt NOT NULL", IsPrimaryKey=true)]
+		[Column(Name="id", Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="BigInt NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public long Id
 		{
 			get
@@ -546,7 +546,7 @@ namespace Tourtab
 			OnCreated();
 		}
 		
-		[Column(Name="id", Storage="_Id", DbType="BigInt NOT NULL", IsPrimaryKey=true)]
+		[Column(Name="id", Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="BigInt NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public long Id
 		{
 			get
@@ -729,7 +729,7 @@ namespace Tourtab
 			OnCreated();
 		}
 		
-		[Column(Name="id", Storage="_Id", DbType="BigInt NOT NULL", IsPrimaryKey=true)]
+		[Column(Name="id", Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="BigInt NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public long Id
 		{
 			get
@@ -1046,7 +1046,7 @@ namespace Tourtab
 			OnCreated();
 		}
 		
-		[Column(Name="id", Storage="_Id", DbType="BigInt NOT NULL", IsPrimaryKey=true)]
+		[Column(Name="id", Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="BigInt NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public long Id
 		{
 			get
@@ -1274,7 +1274,7 @@ namespace Tourtab
 			OnCreated();
 		}
 		
-		[Column(Name="id", Storage="_Id", DbType="BigInt NOT NULL", IsPrimaryKey=true)]
+		[Column(Name="id", Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="BigInt NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public long Id
 		{
 			get
@@ -1586,7 +1586,7 @@ namespace Tourtab
 			OnCreated();
 		}
 		
-		[Column(Name="id", Storage="_Id", DbType="BigInt NOT NULL", IsPrimaryKey=true)]
+		[Column(Name="id", Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="BigInt NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public long Id
 		{
 			get
@@ -1763,7 +1763,7 @@ namespace Tourtab
 			OnCreated();
 		}
 		
-		[Column(Name="id", Storage="_Id", DbType="BigInt NOT NULL", IsPrimaryKey=true)]
+		[Column(Name="id", Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="BigInt NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public long Id
 		{
 			get
@@ -2023,7 +2023,7 @@ namespace Tourtab
 			OnCreated();
 		}
 		
-		[Column(Name="id", Storage="_Id", DbType="BigInt NOT NULL", IsPrimaryKey=true)]
+		[Column(Name="id", Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="BigInt NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public long Id
 		{
 			get

@@ -16,5 +16,9 @@ namespace Tourtab.Forms
         {
             InitializeComponent();
         }
+
+        private void MainContainer_Load(object sender, EventArgs e)
+        {
+        }
     }
 }
