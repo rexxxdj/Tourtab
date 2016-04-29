@@ -7,14 +7,48 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NLog;
 
 namespace Tourtab.Forms.ListForms
 {
     public partial class TournamentList : Form
     {
+        /*Строка подключения*/
+        private const string connectionString = @"server=localhost;database=TourtabDb;Integrated Security=true";
+        /*Экземляр базы данных*/
+        private Tourtab.TourtabDb tourTabDb;
+        /*Логгер*/
+        private Logger logger = LogManager.GetLogger("AuthForm");
+
         public TournamentList()
         {
             InitializeComponent();
+        }
+
+        /*Действие при загрузке формы*/
+        private void TournamentList_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                tourTabDb = new TourtabDb(connectionString);
+                if (tourTabDb != null)
+                {
+                    logger.Info("Соединение установлено");
+
+                    /*Получаем список турниров*/
+                    var table = tourTabDb.Tournament.Select(c => c);
+                    tournamentTable.DataSource = table;
+                }
+                else
+                {
+                    logger.Info("Соединение не установлено");
+                }
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show("Произошла ошибка\n" + exc.Message);
+                logger.Error("Error message: " + exc.Message);
+            }
         }
 
         /*Действие при нажатии нопки "Добавить"*/

@@ -15,7 +15,7 @@ namespace Tourtab
     public partial class AuthForm : Form
     {
         /*Строка подключения*/
-        private const string connectionString = @"server=localhost;database=TourtabDb;Integrated Security=true";
+        private const string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Databases\TourtabDb.mdf;Integrated Security=True";
         /*Экземляр базы данных*/
         private Tourtab.TourtabDb tourTabDb;
         /*Логгер*/

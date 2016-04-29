@@ -33,9 +33,9 @@
             this.deleteButton = new System.Windows.Forms.Button();
             this.editButton = new System.Windows.Forms.Button();
             this.addButton = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.tournamentTable = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tournamentTable)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -90,31 +90,32 @@
             this.addButton.UseVisualStyleBackColor = true;
             this.addButton.Click += new System.EventHandler(this.addButton_Click);
             // 
-            // dataGridView1
+            // tournamentTable
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 36);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(684, 405);
-            this.dataGridView1.TabIndex = 1;
+            this.tournamentTable.AllowUserToAddRows = false;
+            this.tournamentTable.AllowUserToDeleteRows = false;
+            this.tournamentTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tournamentTable.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tournamentTable.Location = new System.Drawing.Point(0, 36);
+            this.tournamentTable.Name = "tournamentTable";
+            this.tournamentTable.ReadOnly = true;
+            this.tournamentTable.Size = new System.Drawing.Size(684, 405);
+            this.tournamentTable.TabIndex = 1;
             // 
             // TournamentList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(684, 441);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.tournamentTable);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.MinimumSize = new System.Drawing.Size(700, 480);
             this.Name = "TournamentList";
             this.Text = "Таблица турниров";
+            this.Load += new System.EventHandler(this.TournamentList_Load);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tournamentTable)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -122,7 +123,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView tournamentTable;
         private System.Windows.Forms.Button searchButton;
         private System.Windows.Forms.Button deleteButton;
         private System.Windows.Forms.Button editButton;

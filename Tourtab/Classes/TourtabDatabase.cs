@@ -880,12 +880,12 @@ namespace Tourtab
 					if ((previousValue != null))
 					{
 						this._Tournament.Entity = null;
-						previousValue.Match.Remove(this);
+						previousValue.MATCH_ASSOCIATI_TOURNAME.Remove(this);
 					}
 					this._Tournament.Entity = value;
 					if ((value != null))
 					{
-						value.Match.Add(this);
+						value.MATCH_ASSOCIATI_TOURNAME.Add(this);
 						this._Tournament_id = value.Id;
 					}
 					else
@@ -1989,11 +1989,11 @@ namespace Tourtab
 		
 		private System.Nullable<long> _Location_id;
 		
-		private System.Nullable<int> _Match_count;
+		private System.Nullable<int> _Match;
 		
-		private string _Tournament_name;
+		private string _Name;
 		
-		private EntitySet<Match> _Match;
+		private EntitySet<Match> _MATCH_ASSOCIATI_TOURNAME;
 		
 		private EntityRef<Location> _Location;
 		
@@ -2009,15 +2009,15 @@ namespace Tourtab
     partial void OnSport_idChanged();
     partial void OnLocation_idChanging(System.Nullable<long> value);
     partial void OnLocation_idChanged();
-    partial void OnMatch_countChanging(System.Nullable<int> value);
-    partial void OnMatch_countChanged();
-    partial void OnTournament_nameChanging(string value);
-    partial void OnTournament_nameChanged();
+    partial void OnMatchChanging(System.Nullable<int> value);
+    partial void OnMatchChanged();
+    partial void OnNameChanging(string value);
+    partial void OnNameChanged();
     #endregion
 		
 		public Tournament()
 		{
-			this._Match = new EntitySet<Match>(new Action<Match>(this.attach_Match), new Action<Match>(this.detach_Match));
+			this._MATCH_ASSOCIATI_TOURNAME = new EntitySet<Match>(new Action<Match>(this.attach_MATCH_ASSOCIATI_TOURNAME), new Action<Match>(this.detach_MATCH_ASSOCIATI_TOURNAME));
 			this._Location = default(EntityRef<Location>);
 			this._Sport = default(EntityRef<Sport>);
 			OnCreated();
@@ -2083,48 +2083,8 @@ namespace Tourtab
 			}
 		}
 		
-		[Column(Name="match_count", Storage="_Match_count", DbType="Int")]
-		public System.Nullable<int> Match_count
-		{
-			get
-			{
-				return this._Match_count;
-			}
-			set
-			{
-				if ((this._Match_count != value))
-				{
-					this.OnMatch_countChanging(value);
-					this.SendPropertyChanging();
-					this._Match_count = value;
-					this.SendPropertyChanged("Match_count");
-					this.OnMatch_countChanged();
-				}
-			}
-		}
-		
-		[Column(Name="tournament_name", Storage="_Tournament_name", DbType="VarChar(254)")]
-		public string Tournament_name
-		{
-			get
-			{
-				return this._Tournament_name;
-			}
-			set
-			{
-				if ((this._Tournament_name != value))
-				{
-					this.OnTournament_nameChanging(value);
-					this.SendPropertyChanging();
-					this._Tournament_name = value;
-					this.SendPropertyChanged("Tournament_name");
-					this.OnTournament_nameChanged();
-				}
-			}
-		}
-		
-		[Association(Name="FK_MATCH_ASSOCIATI_TOURNAME", Storage="_Match", ThisKey="Id", OtherKey="Tournament_id", DeleteRule="NO ACTION")]
-		public EntitySet<Match> Match
+		[Column(Name="match", Storage="_Match", DbType="Int")]
+		public System.Nullable<int> Match
 		{
 			get
 			{
@@ -2132,7 +2092,47 @@ namespace Tourtab
 			}
 			set
 			{
-				this._Match.Assign(value);
+				if ((this._Match != value))
+				{
+					this.OnMatchChanging(value);
+					this.SendPropertyChanging();
+					this._Match = value;
+					this.SendPropertyChanged("Match");
+					this.OnMatchChanged();
+				}
+			}
+		}
+		
+		[Column(Name="name", Storage="_Name", DbType="VarChar(254)")]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this.OnNameChanging(value);
+					this.SendPropertyChanging();
+					this._Name = value;
+					this.SendPropertyChanged("Name");
+					this.OnNameChanged();
+				}
+			}
+		}
+		
+		[Association(Name="FK_MATCH_ASSOCIATI_TOURNAME", Storage="_MATCH_ASSOCIATI_TOURNAME", ThisKey="Id", OtherKey="Tournament_id", DeleteRule="NO ACTION")]
+		public EntitySet<Match> MATCH_ASSOCIATI_TOURNAME
+		{
+			get
+			{
+				return this._MATCH_ASSOCIATI_TOURNAME;
+			}
+			set
+			{
+				this._MATCH_ASSOCIATI_TOURNAME.Assign(value);
 			}
 		}
 		
@@ -2224,13 +2224,13 @@ namespace Tourtab
 			}
 		}
 		
-		private void attach_Match(Match entity)
+		private void attach_MATCH_ASSOCIATI_TOURNAME(Match entity)
 		{
 			this.SendPropertyChanging();
 			entity.Tournament = this;
 		}
 		
-		private void detach_Match(Match entity)
+		private void detach_MATCH_ASSOCIATI_TOURNAME(Match entity)
 		{
 			this.SendPropertyChanging();
 			entity.Tournament = null;
