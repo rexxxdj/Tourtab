@@ -16,10 +16,9 @@ namespace Tourtab
     {
         /*Строка подключения*/
         private const string connectionString = @"server=localhost;database=TourtabDb;Integrated Security=true";
-
+        /*Экземляр базы данных*/
         private Tourtab.TourtabDb tourTabDb;
-
-
+        /*Логгер*/
         private Logger logger = LogManager.GetLogger("AuthForm");
 
         public AuthForm()
@@ -73,6 +72,7 @@ namespace Tourtab
             else
             {
                 /*Запускаем основную программу*/
+                logger.Info("Вход выполнен");
             }
 
         }
