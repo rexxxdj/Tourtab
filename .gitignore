@@ -2,4 +2,5 @@
 !/Tourtab/*
 /Tourtab/bin
 /Tourtab/obj
+!/Databases/*
 /Databases
