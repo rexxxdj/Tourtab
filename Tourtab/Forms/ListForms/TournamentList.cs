@@ -13,8 +13,6 @@ namespace Tourtab.Forms.ListForms
 {
     public partial class TournamentList : Form
     {
-        /*Строка подключения*/
-        private const string connectionString = @"server=localhost;database=TourtabDb;Integrated Security=true";
         /*Экземляр базы данных*/
         private Tourtab.TourtabDb tourTabDb;
         /*Логгер*/
@@ -30,7 +28,7 @@ namespace Tourtab.Forms.ListForms
         {
             try
             {
-                tourTabDb = new TourtabDb(connectionString);
+                tourTabDb = new TourtabDb(Classes.StaticMembers.connectionString);
                 if (tourTabDb != null)
                 {
                     logger.Info("Соединение установлено");

@@ -17,8 +17,19 @@ namespace Tourtab.Forms
             InitializeComponent();
         }
 
+        /*Действия при загрузке основного контейнера*/
         private void MainContainer_Load(object sender, EventArgs e)
         {
+            Forms.ListForms.TournamentList tournamentList = new ListForms.TournamentList();
+            tournamentList.MdiParent = this;
+            tournamentList.Show();
+        }
+
+        /*Переопределяем действия при выходе из программы*/
+        protected override void OnClosed(EventArgs e)
+        {
+            base.OnClosed(e);
+            Application.Exit();
         }
     }
 }
