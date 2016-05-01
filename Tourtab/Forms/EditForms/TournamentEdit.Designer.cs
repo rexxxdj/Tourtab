@@ -105,9 +105,13 @@
             // 
             // tournamentMatchesTable
             // 
+            this.tournamentMatchesTable.AllowUserToAddRows = false;
+            this.tournamentMatchesTable.AllowUserToDeleteRows = false;
+            this.tournamentMatchesTable.AllowUserToOrderColumns = true;
             this.tournamentMatchesTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tournamentMatchesTable.Location = new System.Drawing.Point(15, 199);
             this.tournamentMatchesTable.Name = "tournamentMatchesTable";
+            this.tournamentMatchesTable.ReadOnly = true;
             this.tournamentMatchesTable.Size = new System.Drawing.Size(420, 150);
             this.tournamentMatchesTable.TabIndex = 9;
             // 
@@ -129,6 +133,7 @@
             this.tournamentMatchesDeleteButton.TabIndex = 11;
             this.tournamentMatchesDeleteButton.Text = "Исключить";
             this.tournamentMatchesDeleteButton.UseVisualStyleBackColor = true;
+            this.tournamentMatchesDeleteButton.Click += new System.EventHandler(this.tournamentMatchesDeleteButton_Click);
             // 
             // errorMessage
             // 

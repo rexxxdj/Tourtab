@@ -15,15 +15,34 @@ namespace Tourtab.Forms
     {
         private Logger logger = LogManager.GetLogger("MainContainer");
 
+        /*Переменная прав доступа*/
+        private bool permission;
+
         public MainContainer()
         {
             InitializeComponent();
             this.FormClosing += this.MainContainer_FormClosing;
         }
 
+        public MainContainer(bool permission)
+        {
+            InitializeComponent();
+            this.permission = permission;
+            this.FormClosing += this.MainContainer_FormClosing;
+        }
+
         /*Действия при загрузке основного контейнера*/
         private void MainContainer_Load(object sender, EventArgs e)
         {
+
+            if (permission)
+            {
+                logger.Info("Вы зашли как администратор");
+            }
+            else
+            {
+                logger.Info("Вы зашли как организатор");
+            }
 
             Forms.ListForms.TournamentList tournamentList = new ListForms.TournamentList();
             tournamentList.MdiParent = this;
@@ -64,6 +83,15 @@ namespace Tourtab.Forms
             Forms.ListForms.TournamentList tournamentList = new ListForms.TournamentList();
             tournamentList.MdiParent = this;
             tournamentList.Show();
+        }
+
+        /*Свойство прав доступа*/
+        public bool Permission
+        {
+            get
+            {
+                return this.permission;
+            }
         }
     }
 }

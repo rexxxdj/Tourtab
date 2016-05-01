@@ -142,6 +142,9 @@
     <EmbeddedResource Include="Forms\AuthForm.resx">
       <DependentUpon>AuthForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EditForms\MatchEdit.resx">
+      <DependentUpon>MatchEdit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\EditForms\SportEdit.resx">
       <DependentUpon>SportEdit.cs</DependentUpon>
     </EmbeddedResource>

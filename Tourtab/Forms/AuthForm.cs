@@ -72,7 +72,16 @@ namespace Tourtab
             {
                 /*Запускаем основную программу*/
                 logger.Info("Вход выполнен");
-                this.DialogResult = DialogResult.OK;
+                if(isAdmin)
+                {
+                    /*Это администратор*/
+                    this.DialogResult = DialogResult.OK;
+                }
+                else
+                {
+                    /*Это организатор*/
+                    this.DialogResult = DialogResult.Yes;
+                }
             }
 
         }
