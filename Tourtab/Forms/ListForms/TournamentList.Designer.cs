@@ -52,6 +52,7 @@
             // 
             // searchButton
             // 
+            this.searchButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.searchButton.Location = new System.Drawing.Point(597, 7);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(75, 23);
@@ -94,12 +95,14 @@
             // 
             this.tournamentTable.AllowUserToAddRows = false;
             this.tournamentTable.AllowUserToDeleteRows = false;
+            this.tournamentTable.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
             this.tournamentTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tournamentTable.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tournamentTable.Location = new System.Drawing.Point(0, 36);
             this.tournamentTable.Name = "tournamentTable";
             this.tournamentTable.ReadOnly = true;
-            this.tournamentTable.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.tournamentTable.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
+            this.tournamentTable.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.tournamentTable.Size = new System.Drawing.Size(684, 405);
             this.tournamentTable.TabIndex = 1;
             // 

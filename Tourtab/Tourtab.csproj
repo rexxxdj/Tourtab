@@ -77,6 +77,24 @@
     <Compile Include="Forms\AuthForm.Designer.cs">
       <DependentUpon>AuthForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\EditForms\LocationEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditForms\LocationEdit.Designer.cs">
+      <DependentUpon>LocationEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EditForms\MatchEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditForms\MatchEdit.Designer.cs">
+      <DependentUpon>MatchEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EditForms\SportEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditForms\SportEdit.Designer.cs">
+      <DependentUpon>SportEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\EditForms\TournamentEdit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +141,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\AuthForm.resx">
       <DependentUpon>AuthForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EditForms\SportEdit.resx">
+      <DependentUpon>SportEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\EditForms\TournamentEdit.resx">
       <DependentUpon>TournamentEdit.cs</DependentUpon>
@@ -185,11 +206,8 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="Databases\TourtabDb.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="Databases\TourtabDb.mdf" />
     <Content Include="Databases\TourtabDb_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>TourtabDb.mdf</DependentUpon>
     </Content>
   </ItemGroup>

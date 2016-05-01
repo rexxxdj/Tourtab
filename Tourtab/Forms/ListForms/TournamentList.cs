@@ -45,7 +45,7 @@ namespace Tourtab.Forms.ListForms
                                                              match_count = tournament.Match
                                                          });
                     tournamentTable.DataSource = table;
-                    tournamentTable.Columns["id"].HeaderText          = "Порядковый номер";
+                    tournamentTable.Columns["id"].HeaderText          = "Индекс";
                     tournamentTable.Columns["sport"].HeaderText       = "Вид спорта";
                     tournamentTable.Columns["match_count"].HeaderText = "Число матчей";
                 }
@@ -64,13 +64,17 @@ namespace Tourtab.Forms.ListForms
         /*Действие при нажатии нопки "Добавить"*/
         private void addButton_Click(object sender, EventArgs e)
         {
-
+            Forms.EditForms.TournamentEdit tourEdit = new EditForms.TournamentEdit();
+            tourEdit.MdiParent = this.MdiParent;
+            tourEdit.Show();
         }
 
         /*Действие при нажатии нопки "Изменить"*/
         private void editButton_Click(object sender, EventArgs e)
         {
-
+            Forms.EditForms.TournamentEdit tourEdit = new EditForms.TournamentEdit();
+            tourEdit.MdiParent = this.MdiParent;
+            tourEdit.Show();
         }
 
         /*Действие при нажатии нопки "Удалить"*/
