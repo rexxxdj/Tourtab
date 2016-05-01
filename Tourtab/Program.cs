@@ -16,7 +16,19 @@ namespace Tourtab
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AuthForm());
+
+            /*Авторизация*/
+            var auth = new AuthForm().ShowDialog();
+
+            /*В случае, если результат диалога будет ОК, запустить главное окно приложения*/
+            if (auth == DialogResult.OK)
+            {
+                Application.Run(new Forms.MainContainer());
+            }
+            else
+            {
+                return;
+            }
         }
     }
 }

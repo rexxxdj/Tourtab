@@ -26,6 +26,7 @@ namespace Tourtab.Forms.ListForms
         /*Действие при загрузке формы*/
         private void TournamentList_Load(object sender, EventArgs e)
         {
+
             try
             {
                 tourTabDb = new TourtabDb(Classes.StaticMembers.connectionString);
@@ -34,8 +35,19 @@ namespace Tourtab.Forms.ListForms
                     logger.Info("Соединение установлено");
 
                     /*Получаем список турниров*/
-                    var table = tourTabDb.Tournament.Select(c => c);
+                    var table = tourTabDb.Tournament.Join(tourTabDb.Sport,
+                                                         tournament => tournament.Sport_id,
+                                                         sport => sport.Id,
+                                                         (tournament, sport) => new
+                                                         {
+                                                             id = tournament.Id,
+                                                             sport = sport.Name,
+                                                             match_count = tournament.Match
+                                                         });
                     tournamentTable.DataSource = table;
+                    tournamentTable.Columns["id"].HeaderText          = "Порядковый номер";
+                    tournamentTable.Columns["sport"].HeaderText       = "Вид спорта";
+                    tournamentTable.Columns["match_count"].HeaderText = "Число матчей";
                 }
                 else
                 {

@@ -99,6 +99,7 @@
             this.tournamentTable.Location = new System.Drawing.Point(0, 36);
             this.tournamentTable.Name = "tournamentTable";
             this.tournamentTable.ReadOnly = true;
+            this.tournamentTable.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.tournamentTable.Size = new System.Drawing.Size(684, 405);
             this.tournamentTable.TabIndex = 1;
             // 

@@ -72,10 +72,7 @@ namespace Tourtab
             {
                 /*Запускаем основную программу*/
                 logger.Info("Вход выполнен");
-
-                Forms.MainContainer mainContainer = new Forms.MainContainer();
-                mainContainer.Show();
-                this.Hide();
+                this.DialogResult = DialogResult.OK;
             }
 
         }
