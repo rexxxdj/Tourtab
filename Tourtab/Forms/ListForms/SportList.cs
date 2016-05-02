@@ -45,7 +45,7 @@ namespace Tourtab.Forms.ListForms
         /*Действие при нажатии нопки "Добавить"*/
         private void addButton_Click(object sender, EventArgs e)
         {
-
+            var result = new Forms.EditForms.SportEdit().ShowDialog();
         }
 
         /*Действие при нажатии нопки "Изменить"*/

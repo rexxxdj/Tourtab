@@ -113,7 +113,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.MinimumSize = new System.Drawing.Size(700, 480);
             this.Name = "SportList";
-            this.Text = "Таблица матчей";
+            this.Text = "Таблица видов спорта";
             this.Load += new System.EventHandler(this.SportList_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.sportTable)).EndInit();
