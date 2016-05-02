@@ -89,6 +89,12 @@
     <Compile Include="Forms\EditForms\MatchEdit.Designer.cs">
       <DependentUpon>MatchEdit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\EditForms\OrganizatorEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditForms\OrganizatorEdit.Designer.cs">
+      <DependentUpon>OrganizatorEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\EditForms\SportEdit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,6 +150,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\EditForms\MatchEdit.resx">
       <DependentUpon>MatchEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EditForms\OrganizatorEdit.resx">
+      <DependentUpon>OrganizatorEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\EditForms\SportEdit.resx">
       <DependentUpon>SportEdit.cs</DependentUpon>

@@ -48,9 +48,9 @@
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.выделитьвсеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lists = new System.Windows.Forms.ToolStripMenuItem();
-            this.списокТурнировToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.списокУчастниковToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.списокОрганизаторовToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sportListStripMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.participantListStripMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.organiztorsListStripMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.сервисToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.настройкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.параметрыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -60,6 +60,7 @@
             this.поискToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.опрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sportTypeStripMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.mainMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -217,31 +218,33 @@
             // lists
             // 
             this.lists.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.списокТурнировToolStripMenuItem,
-            this.списокУчастниковToolStripMenuItem,
-            this.списокОрганизаторовToolStripMenuItem});
+            this.sportListStripMenu,
+            this.participantListStripMenu,
+            this.organiztorsListStripMenu,
+            this.sportTypeStripMenu});
             this.lists.Name = "lists";
             this.lists.Size = new System.Drawing.Size(60, 20);
             this.lists.Text = "Списки";
             // 
-            // списокТурнировToolStripMenuItem
+            // sportListStripMenu
             // 
-            this.списокТурнировToolStripMenuItem.Name = "списокТурнировToolStripMenuItem";
-            this.списокТурнировToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
-            this.списокТурнировToolStripMenuItem.Text = "Список турниров";
-            this.списокТурнировToolStripMenuItem.Click += new System.EventHandler(this.списокТурнировToolStripMenuItem_Click);
+            this.sportListStripMenu.Name = "sportListStripMenu";
+            this.sportListStripMenu.Size = new System.Drawing.Size(200, 22);
+            this.sportListStripMenu.Text = "Список турниров";
+            this.sportListStripMenu.Click += new System.EventHandler(this.списокТурнировToolStripMenuItem_Click);
             // 
-            // списокУчастниковToolStripMenuItem
+            // participantListStripMenu
             // 
-            this.списокУчастниковToolStripMenuItem.Name = "списокУчастниковToolStripMenuItem";
-            this.списокУчастниковToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
-            this.списокУчастниковToolStripMenuItem.Text = "Список участников";
+            this.participantListStripMenu.Name = "participantListStripMenu";
+            this.participantListStripMenu.Size = new System.Drawing.Size(200, 22);
+            this.participantListStripMenu.Text = "Список участников";
             // 
-            // списокОрганизаторовToolStripMenuItem
+            // organiztorsListStripMenu
             // 
-            this.списокОрганизаторовToolStripMenuItem.Name = "списокОрганизаторовToolStripMenuItem";
-            this.списокОрганизаторовToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
-            this.списокОрганизаторовToolStripMenuItem.Text = "Список организаторов";
+            this.organiztorsListStripMenu.Name = "organiztorsListStripMenu";
+            this.organiztorsListStripMenu.Size = new System.Drawing.Size(200, 22);
+            this.organiztorsListStripMenu.Text = "Список организаторов";
+            this.organiztorsListStripMenu.Click += new System.EventHandler(this.списокОрганизаторовToolStripMenuItem_Click);
             // 
             // сервисToolStripMenuItem
             // 
@@ -255,13 +258,13 @@
             // настройкиToolStripMenuItem
             // 
             this.настройкиToolStripMenuItem.Name = "настройкиToolStripMenuItem";
-            this.настройкиToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.настройкиToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.настройкиToolStripMenuItem.Text = "&Настройки";
             // 
             // параметрыToolStripMenuItem
             // 
             this.параметрыToolStripMenuItem.Name = "параметрыToolStripMenuItem";
-            this.параметрыToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.параметрыToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.параметрыToolStripMenuItem.Text = "&Параметры";
             // 
             // справкаToolStripMenuItem
@@ -305,6 +308,13 @@
             this.опрограммеToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
             this.опрограммеToolStripMenuItem.Text = "&О программе...";
             // 
+            // sportTypeStripMenu
+            // 
+            this.sportTypeStripMenu.Name = "sportTypeStripMenu";
+            this.sportTypeStripMenu.Size = new System.Drawing.Size(200, 22);
+            this.sportTypeStripMenu.Text = "Виды спорта";
+            this.sportTypeStripMenu.Click += new System.EventHandler(this.видыСпортаToolStripMenuItem_Click);
+            // 
             // MainContainer
             // 
             this.AllowDrop = true;
@@ -319,6 +329,7 @@
             this.MinimumSize = new System.Drawing.Size(800, 400);
             this.Name = "MainContainer";
             this.Text = "Турнирная таблица 0.0.1";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MainContainer_Load);
             this.mainMenuStrip.ResumeLayout(false);
             this.mainMenuStrip.PerformLayout();
@@ -357,8 +368,9 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripMenuItem опрограммеToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem lists;
-        private System.Windows.Forms.ToolStripMenuItem списокТурнировToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem списокУчастниковToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem списокОрганизаторовToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sportListStripMenu;
+        private System.Windows.Forms.ToolStripMenuItem participantListStripMenu;
+        private System.Windows.Forms.ToolStripMenuItem organiztorsListStripMenu;
+        private System.Windows.Forms.ToolStripMenuItem sportTypeStripMenu;
     }
 }

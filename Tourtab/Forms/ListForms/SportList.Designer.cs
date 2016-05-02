@@ -33,9 +33,9 @@
             this.deleteButton = new System.Windows.Forms.Button();
             this.editButton = new System.Windows.Forms.Button();
             this.addButton = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.sportTable = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sportTable)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -52,6 +52,7 @@
             // 
             // searchButton
             // 
+            this.searchButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.searchButton.Location = new System.Drawing.Point(597, 7);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(75, 23);
@@ -90,31 +91,32 @@
             this.addButton.UseVisualStyleBackColor = true;
             this.addButton.Click += new System.EventHandler(this.addButton_Click);
             // 
-            // dataGridView1
+            // sportTable
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 36);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(684, 405);
-            this.dataGridView1.TabIndex = 1;
+            this.sportTable.AllowUserToAddRows = false;
+            this.sportTable.AllowUserToDeleteRows = false;
+            this.sportTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.sportTable.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.sportTable.Location = new System.Drawing.Point(0, 36);
+            this.sportTable.Name = "sportTable";
+            this.sportTable.ReadOnly = true;
+            this.sportTable.Size = new System.Drawing.Size(684, 405);
+            this.sportTable.TabIndex = 1;
             // 
             // SportList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(684, 441);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.sportTable);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.MinimumSize = new System.Drawing.Size(700, 480);
             this.Name = "SportList";
             this.Text = "Таблица матчей";
+            this.Load += new System.EventHandler(this.SportList_Load);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sportTable)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -122,7 +124,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView sportTable;
         private System.Windows.Forms.Button searchButton;
         private System.Windows.Forms.Button deleteButton;
         private System.Windows.Forms.Button editButton;

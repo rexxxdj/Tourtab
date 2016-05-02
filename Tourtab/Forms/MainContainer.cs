@@ -85,6 +85,22 @@ namespace Tourtab.Forms
             tournamentList.Show();
         }
 
+        /*Открыть окно списка организаторов*/
+        private void списокОрганизаторовToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Forms.ListForms.OrganizatorList organzitorList = new ListForms.OrganizatorList(this.permission);
+            organzitorList.MdiParent = this;
+            organzitorList.Show();
+        }
+
+        /*Открыть окно списка видов спорта*/
+        private void видыСпортаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Forms.ListForms.SportList sportList = new ListForms.SportList(this.permission);
+            sportList.MdiParent = this;
+            sportList.Show();
+        }
+
         /*Свойство прав доступа*/
         public bool Permission
         {
@@ -93,5 +109,6 @@ namespace Tourtab.Forms
                 return this.permission;
             }
         }
+
     }
 }

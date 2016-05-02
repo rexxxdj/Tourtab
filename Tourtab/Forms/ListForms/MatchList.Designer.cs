@@ -52,6 +52,7 @@
             // 
             // searchButton
             // 
+            this.searchButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.searchButton.Location = new System.Drawing.Point(597, 7);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(75, 23);

@@ -7,14 +7,39 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NLog;
 
 namespace Tourtab.Forms.ListForms
 {
     public partial class SportList : Form
     {
+        private Logger logger = LogManager.GetLogger("SportList");
+        private bool permission;
+
         public SportList()
         {
             InitializeComponent();
+        }
+
+        public SportList(bool permission)
+        {
+            InitializeComponent();
+            this.permission = permission;
+        }
+
+        /*Действие при загрузку формы*/
+        private void SportList_Load(object sender, EventArgs e)
+        {
+            if(!permission)
+            {
+                this.addButton.Enabled    = false;
+                this.editButton.Enabled   = false;
+                this.deleteButton.Enabled = false;
+            }
+
+            TourtabDb tourtab = new TourtabDb(Classes.StaticMembers.connectionString);
+
+            sportTable.DataSource = tourtab.Sport.Select(x => x);
         }
 
         /*Действие при нажатии нопки "Добавить"*/
