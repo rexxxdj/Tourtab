@@ -43,7 +43,14 @@ namespace Tourtab.Forms.EditForms
                     return;
                 }
 
-                tourtab.Sport.Where(x => x.Name.ToLower() == sportType.ToLower()).Select(x => x);
+                if(tourtab.Sport.Where(x => x.Name.ToLower() == sportType.ToLower()).Select(x => x).Count() > 0)
+                {
+                    MessageBox.Show("Такой вид спорта уже есть базе данных",
+                        "Предупреждение",
+                        buttons: MessageBoxButtons.OK,
+                        icon: MessageBoxIcon.Warning);
+                    return;
+                }
 
                 Sport sport = new Sport
                 {
@@ -52,7 +59,6 @@ namespace Tourtab.Forms.EditForms
 
                 tourtab.Sport.InsertOnSubmit(sport);
                 tourtab.SubmitChanges();
-
 
             }
             catch(Exception exc)
@@ -64,7 +70,6 @@ namespace Tourtab.Forms.EditForms
                     icon: MessageBoxIcon.Error);
                 return;
             }
-
 
         }
 

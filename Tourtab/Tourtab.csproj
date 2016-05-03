@@ -216,7 +216,9 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="Databases\TourtabDb.mdf" />
     <Content Include="Databases\TourtabDb_log.ldf">

@@ -13,6 +13,8 @@ namespace Tourtab.Forms.ListForms
 {
     public partial class SportList : Form
     {
+        TourtabDb tourtab = new TourtabDb(Classes.StaticMembers.connectionString);
+
         private Logger logger = LogManager.GetLogger("SportList");
         private bool permission;
 
@@ -37,7 +39,6 @@ namespace Tourtab.Forms.ListForms
                 this.deleteButton.Enabled = false;
             }
 
-            TourtabDb tourtab = new TourtabDb(Classes.StaticMembers.connectionString);
 
             sportTable.DataSource = tourtab.Sport.Select(x => x);
         }
@@ -46,6 +47,10 @@ namespace Tourtab.Forms.ListForms
         private void addButton_Click(object sender, EventArgs e)
         {
             var result = new Forms.EditForms.SportEdit().ShowDialog();
+            if(result == DialogResult.OK)
+            {
+                sportTable.DataSource = tourtab.Sport.Select(x => x);
+            }
         }
 
         /*Действие при нажатии нопки "Изменить"*/
