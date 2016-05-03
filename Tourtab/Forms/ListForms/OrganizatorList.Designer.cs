@@ -95,11 +95,14 @@
             // 
             this.organzitorTable.AllowUserToAddRows = false;
             this.organzitorTable.AllowUserToDeleteRows = false;
+            this.organzitorTable.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.organzitorTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.organzitorTable.Dock = System.Windows.Forms.DockStyle.Fill;
             this.organzitorTable.Location = new System.Drawing.Point(0, 36);
+            this.organzitorTable.MultiSelect = false;
             this.organzitorTable.Name = "organzitorTable";
             this.organzitorTable.ReadOnly = true;
+            this.organzitorTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.organzitorTable.Size = new System.Drawing.Size(684, 405);
             this.organzitorTable.TabIndex = 1;
             // 

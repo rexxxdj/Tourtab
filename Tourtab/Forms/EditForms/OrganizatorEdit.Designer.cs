@@ -257,6 +257,7 @@
             this.MinimumSize = new System.Drawing.Size(300, 450);
             this.Name = "OrganizatorEdit";
             this.Text = "Редактирование организатора";
+            this.Load += new System.EventHandler(this.OrganizatorEdit_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ageInputBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
